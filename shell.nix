@@ -1,11 +1,24 @@
 { pkgs ? import <nixpkgs> {} }:
 
+let
+  pythonEnv = pkgs.python3Packages.buildEnv {
+    name = "my-fastapi-env";
+    packages = with pkgs.python3Packages; [
+      # Core packages (optional if using requirements.txt)
+      python3
+      pip
+      virtualenv
+      # Add any other system-level packages if needed
+    ];
+  };
+in
 pkgs.mkShell {
   name = "dev-shell";
 
   buildInputs = [    # Python and Beware framework
-    pkgs.python311
-    pkgs.python311Packages.pip
+    pythonEnv
+    pkgs.python3
+    pkgs.python3Packages.pip
     pkgs.python311Packages.virtualenv
     pkgs.postgresql
 
@@ -24,8 +37,24 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    source ./venv/bin/activate
-    export DATABASE_URL="postgresql://myuser:mypassword@localhost/myapp"
+    VENV_PATH="${toString ./venv}"
+
+    if [ ! -d "$VENV_PATH" ]; then
+      echo "Creating Python virtual environment at $VENV_PATH..."
+      python3 -m venv "$VENV_PATH"
+      echo "Virtual environment created."
+      echo "Activating virtual environment..."
+      source "$VENV_PATH/bin/activate"
+      echo "Installing required packages from requirements.txt..."
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      echo "Packages installed."
+    else
+      source "$VENV_PATH/bin/activate"
+      echo "Activated existing virtual environment."
+    fi
+
+    export DATABASE_URL="postgresql://myuser:password@localhost/mydatabase"
     
     # Make sure PostgreSQL is initialized
     if [ ! -d "$HOME/pgdata" ]; then

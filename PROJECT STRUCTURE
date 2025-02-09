@@ -1,0 +1,93 @@
+project-root/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── api/
+│   │   │   ├── __init__.py
+│   │   │   ├── routes/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── auth.py
+│   │   │   │   ├── buyers.py
+│   │   │   │   ├── sellers.py
+│   │   │   │   └── cold_stores.py
+│   │   │   ├── dependencies.py
+│   │   │   └── schemas.py
+│   │   ├── core/
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py
+│   │   │   └── security.py
+│   │   ├── db/
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py
+│   │   │   ├── models.py
+│   │   │   └── session.py
+│   │   ├── models/
+│   │   │   ├── __init__.py
+│   │   │   ├── user.py
+│   │   │   ├── buyer.py
+│   │   │   ├── seller.py
+│   │   │   └── cold_store.py
+│   │   ├── services/
+│   │   │   ├── __init__.py
+│   │   │   ├── auth_service.py
+│   │   │   └── verification_service.py
+│   │   └── utils/
+│   │       ├── __init__.py
+│   │       └── helpers.py
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── conftest.py
+│   │   ├── test_auth.py
+│   │   ├── test_buyers.py
+│   │   ├── test_sellers.py
+│   │   └── test_cold_stores.py
+│   ├── alembic/
+│   │   ├── env.py
+│   │   ├── script.py.mako
+│   │   └── versions/
+│   │       └── <migration_files>
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   └── favicon.ico
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── logo.png
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   │   ├── Login.js
+│   │   │   │   └── Register.js
+│   │   │   ├── Buyers/
+│   │   │   │   ├── BuyerList.js
+│   │   │   │   └── BuyerInventory.js
+│   │   │   ├── Sellers/
+│   │   │   │   ├── SellerList.js
+│   │   │   │   └── SellerProducts.js
+│   │   │   └── ColdStores/
+│   │   │       └── ColdStoreList.js
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── BuyerPage.js
+│   │   │   ├── SellerPage.js
+│   │   │   └── ColdStorePage.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   └── auth.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── App.css
+│   ├── package.json
+│   ├── package-lock.json
+│   └── webpack.config.js
+│
+├── database/
+│   ├── init.sql
+│   └── seed.sql
+│
+├── shell.nix
+├── README.md
+└── .gitignore

@@ -1,0 +1,110 @@
+2025-02-08 13:38:37.126 +0545 [331622] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-08 13:38:37.126 +0545 [331622] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-08 13:38:37.126 +0545 [331622] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-08 13:38:37.130 +0545 [331622] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-08 13:38:37.132 +0545 [331622] LOG:  database system is shut down
+2025-02-08 13:39:56.796 +0545 [333459] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-08 13:39:56.796 +0545 [333459] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-08 13:39:56.796 +0545 [333459] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-08 13:39:56.800 +0545 [333459] FATAL:  could not create lock file "/run/postgresql/.s.PGSQL.5432.lock": No such file or directory
+2025-02-08 13:39:56.802 +0545 [333459] LOG:  database system is shut down
+2025-02-08 13:40:41.512 +0545 [334644] LOG:  starting PostgreSQL 17.2 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 14.2.1 20241116, 64-bit
+2025-02-08 13:40:41.512 +0545 [334644] LOG:  listening on IPv6 address "::1", port 5432
+2025-02-08 13:40:41.512 +0545 [334644] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-02-08 13:40:41.516 +0545 [334644] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-02-08 13:40:41.525 +0545 [334647] LOG:  database system was shut down at 2025-02-08 13:38:32 +0545
+2025-02-08 13:40:41.534 +0545 [334644] LOG:  database system is ready to accept connections
+2025-02-08 13:41:07.780 +0545 [335255] FATAL:  lock file "postmaster.pid" already exists
+2025-02-08 13:41:07.780 +0545 [335255] HINT:  Is another postmaster (PID 334644) running in data directory "/home/zeph/pgdata"?
+2025-02-08 13:41:56.459 +0545 [336215] FATAL:  database "zeph" does not exist
+2025-02-08 13:45:41.625 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-08 13:46:27.298 +0545 [342988] ERROR:  permission denied for schema public at character 15
+2025-02-08 13:46:27.298 +0545 [342988] STATEMENT:  
+	CREATE TABLE "user" (
+		id SERIAL NOT NULL, 
+		username VARCHAR(80) NOT NULL, 
+		password_hash VARCHAR(256) NOT NULL, 
+		PRIMARY KEY (id), 
+		UNIQUE (username)
+	)
+	
+	
+2025-02-08 13:47:12.612 +0545 [344445] FATAL:  database "zeph" does not exist
+2025-02-08 13:47:23.460 +0545 [334645] LOG:  checkpoint complete: wrote 1018 buffers (6.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=101.511 s, sync=0.299 s, total=101.835 s; sync files=317, longest=0.005 s, average=0.001 s; distance=4762 kB, estimate=4762 kB; lsn=0/19F1D70, redo lsn=0/19F1CE0
+2025-02-08 13:47:47.711 +0545 [345442] FATAL:  role "postgres" does not exist
+2025-02-08 13:49:15.970 +0545 [347572] ERROR:  permission denied for schema public at character 15
+2025-02-08 13:49:15.970 +0545 [347572] STATEMENT:  
+	CREATE TABLE "user" (
+		id SERIAL NOT NULL, 
+		username VARCHAR(80) NOT NULL, 
+		password_hash VARCHAR(256) NOT NULL, 
+		PRIMARY KEY (id), 
+		UNIQUE (username)
+	)
+	
+	
+2025-02-08 13:50:41.560 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-08 13:52:17.921 +0545 [334645] LOG:  checkpoint complete: wrote 962 buffers (5.9%); 1 WAL file(s) added, 0 removed, 0 recycled; write=96.106 s, sync=0.204 s, total=96.362 s; sync files=300, longest=0.012 s, average=0.001 s; distance=4469 kB, estimate=4733 kB; lsn=0/1E4F370, redo lsn=0/1E4F2E0
+2025-02-08 13:54:18.524 +0545 [355459] ERROR:  database "myapp" already exists
+2025-02-08 13:54:18.524 +0545 [355459] STATEMENT:  CREATE DATABASE myapp;
+2025-02-08 13:54:18.524 +0545 [355459] ERROR:  role "myuser" already exists
+2025-02-08 13:54:18.524 +0545 [355459] STATEMENT:  CREATE USER myuser WITH ENCRYPTED PASSWORD 'mypassword';
+2025-02-08 13:55:41.992 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-08 13:55:42.127 +0545 [334645] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.010 s, total=0.135 s; sync files=2, longest=0.006 s, average=0.005 s; distance=1 kB, estimate=4260 kB; lsn=0/1E4FAD0, redo lsn=0/1E4FA78
+2025-02-08 14:04:48.821 +0545 [370403] ERROR:  relation "user" does not exist at character 113
+2025-02-08 14:04:48.821 +0545 [370403] STATEMENT:  SELECT "user".id AS user_id, "user".username AS user_username, "user".password_hash AS user_password_hash 
+	FROM "user" 
+	WHERE "user".username = 'testuser' 
+	 LIMIT 1
+2025-02-08 14:12:41.380 +0545 [370403] ERROR:  relation "user" does not exist at character 113
+2025-02-08 14:12:41.380 +0545 [370403] STATEMENT:  SELECT "user".id AS user_id, "user".username AS user_username, "user".password_hash AS user_password_hash 
+	FROM "user" 
+	WHERE "user".username = 'newuser' 
+	 LIMIT 1
+2025-02-08 14:16:01.409 +0545 [384313] ERROR:  permission denied for schema public at character 15
+2025-02-08 14:16:01.409 +0545 [384313] STATEMENT:  
+	CREATE TABLE alembic_version (
+		version_num VARCHAR(32) NOT NULL, 
+		CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num)
+	)
+	
+	
+2025-02-08 14:16:01.851 +0545 [384350] ERROR:  permission denied for schema public at character 15
+2025-02-08 14:16:01.851 +0545 [384350] STATEMENT:  
+	CREATE TABLE alembic_version (
+		version_num VARCHAR(32) NOT NULL, 
+		CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num)
+	)
+	
+	
+2025-02-09 16:40:23.194 +0545 [943609] FATAL:  role "user" does not exist
+2025-02-09 16:44:36.403 +0545 [949543] FATAL:  role "user" does not exist
+2025-02-09 16:49:38.941 +0545 [956411] FATAL:  role "<correct_username>" does not exist
+2025-02-09 16:50:08.503 +0545 [957497] FATAL:  role "postgres" does not exist
+2025-02-09 16:53:59.794 +0545 [962270] FATAL:  database "mydatabase" does not exist
+2025-02-09 16:58:09.330 +0545 [967680] FATAL:  role "username" does not exist
+2025-02-09 16:59:22.266 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-09 16:59:39.149 +0545 [969241] ERROR:  permission denied to create role
+2025-02-09 16:59:39.149 +0545 [969241] DETAIL:  Only roles with the CREATEROLE attribute may create roles.
+2025-02-09 16:59:39.149 +0545 [969241] STATEMENT:  CREATE ROLE username WITH LOGIN PASSWORD 'yourpassword';
+2025-02-09 17:00:59.647 +0545 [334645] LOG:  checkpoint complete: wrote 968 buffers (5.9%); 0 WAL file(s) added, 0 removed, 1 recycled; write=96.838 s, sync=0.511 s, total=97.382 s; sync files=306, longest=0.006 s, average=0.002 s; distance=4474 kB, estimate=4474 kB; lsn=0/22AF4C0, redo lsn=0/22AE3A0
+2025-02-09 17:01:04.950 +0545 [971422] ERROR:  permission denied for schema public at character 14
+2025-02-09 17:01:04.950 +0545 [971422] STATEMENT:  CREATE TABLE users (
+	    id SERIAL PRIMARY KEY,
+	    username VARCHAR(255) UNIQUE NOT NULL,
+	    hashed_password TEXT NOT NULL,
+	    role VARCHAR(255) NOT NULL
+	);
+2025-02-09 17:03:18.349 +0545 [976823] ERROR:  permission denied for schema public at character 15
+2025-02-09 17:03:18.349 +0545 [976823] STATEMENT:  
+	CREATE TABLE users (
+		id SERIAL NOT NULL, 
+		username VARCHAR, 
+		hashed_password VARCHAR, 
+		role VARCHAR, 
+		PRIMARY KEY (id)
+	)
+	
+	
+2025-02-09 17:04:22.747 +0545 [334645] LOG:  checkpoint starting: time
+2025-02-09 17:04:28.493 +0545 [334645] LOG:  checkpoint complete: wrote 56 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=5.512 s, sync=0.213 s, total=5.746 s; sync files=49, longest=0.009 s, average=0.005 s; distance=171 kB, estimate=4043 kB; lsn=0/22D9040, redo lsn=0/22D8FB0

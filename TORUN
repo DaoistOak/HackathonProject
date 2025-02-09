@@ -1,0 +1,2 @@
+initdb -D $HOME/pgdata
+pg_ctl -D $HOME/pgdata -l logfile start
